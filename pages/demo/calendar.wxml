@@ -1,0 +1,1 @@
+<calendar bindOnDayClick="onDayClick" days-style='{{daysStyle}}'/>

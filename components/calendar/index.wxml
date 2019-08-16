@@ -1,0 +1,28 @@
+<view>
+  <view wx:if='{{mode =="picker" || mode == "pickerRange"}}' class='form-item form-item-calendar {{formatValue == ""?" placeholder":""}}' bindtap='showPicker'>
+    <image src='../images/calendar.svg' />
+    <text>{{formatValue == '' ? placeholder:formatValue}}</text>
+  </view>
+  <view wx:if='{{mode == "normal" || showCalendar}}' class='calendar{{mode != "normal"? " fixed" : ""}}'>
+    <view class='calendar-title'>
+      <image src='../images/btn_pre.svg' bindtap='pre' />
+      <text>{{title}}</text>
+      <image src='../images/btn_next.svg' bindtap='next' />
+    </view>
+    <view class='container-days'>
+      <view class='day day-header' wx:for='{{weekdays}}' wx:for-index='index' wx:for-item='weekday' wx:key='{{index}}'>
+        {{weekday}}
+      </view>
+      <view class='day{{day.currentMonth? " day-current-month" : ""}}' wx:for='{{days}}' wx:for-index='index' wx:for-item='day' wx:key='{{day.id}}' data-index='{{index}}' bindtap='onDayClick'>
+        <view class='day-range {{day.rangeClassName}}'>
+          <view class='day-content {{day.className}}' style='{{day.style}}'>
+            <text>{{day.text}}</text>
+            <view class='content-sub'>
+              <view class='content-sub-dot' wx:if='{{day.showDot}}' />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

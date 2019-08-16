@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/demo/calendar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "calendar": "/components/calendar/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

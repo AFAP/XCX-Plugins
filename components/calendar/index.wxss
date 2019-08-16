@@ -1,0 +1,149 @@
+.calendar {
+  color: #333;
+  margin: 2px 4px;
+}
+
+.fixed {
+  background: #fff;
+  position: fixed;
+}
+
+.form-item {
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #333;
+}
+
+.form-item-calendar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form-item-calendar>image {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.placeholder {
+  color: #888;
+}
+
+.calendar-title {
+  display: flex;
+  justify-content: center;
+  font-size: 13pt;
+  color: #000;
+  font-weight: bold;
+  align-items: center;
+  padding: 6px 32px;
+}
+
+.calendar-title>image {
+  width: 20px;
+  height: 20px;
+}
+
+.calendar-title>text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.container-days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  min-height: 44px;
+  flex-basis: 14%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 11pt;
+}
+
+.day:nth-child(7n) {
+  flex-basis: 15%;
+}
+
+.day:nth-child(7n+1) {
+  flex-basis: 15%;
+}
+
+.day-header {
+  color: #000;
+  font-size: 12pt;
+}
+
+.day-current-month {
+  color: #000;
+}
+
+.today {
+  color: #28f;
+  font-weight: bold;
+}
+
+.day-range {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.day-in-range {
+  background-color: rgba(34, 134, 255, 0.1);
+}
+
+.day-range-start {
+  background-color: rgba(34, 134, 255, 0.1);
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.day-range-end {
+  background-color: rgba(34, 134, 255, 0.1);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.day-content {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content-sub {
+  font-size: 8pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-sub-dot {
+  border-radius: 4px;
+  width: 4px;
+  height: 4px;
+  background: red;
+  margin-right: 2px;
+}
+
+.day-selected-round {
+  background: #28f;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.day-selected-square {
+  background: #28f;
+  color: #fff;
+  border-radius: 3px;
+}
