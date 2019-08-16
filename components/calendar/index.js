@@ -91,7 +91,7 @@ Component({
       })
     } else {
       let selectedDate = _this.data.selectedDate;
-      if (selectedDate == ''){
+      if (selectedDate == '') {
         selectedDate = _this.formatDate(new Date().getTime());
       }
       _this.setData({
@@ -109,17 +109,20 @@ Component({
       month = now.getMonth() + 1;
     }
     let currenDate = new Date(year + '/' + month + '/1');
-    let weekdays = WEEKDAYS_ZH;
-    switch (_this.data.language) {
-      case LANGUAGES.en:
-        weekdays = WEEKDAYS_EN
-        break;
-      case LANGUAGES.zh:
-        weekdays = WEEKDAYS_ZH
-        break;
-      default:
-        weekdays = WEEKDAYS_ZH
-        break;
+    let weekdays = _this.data.weekdays;
+    console.log(weekdays)
+    if (weekdays.length != 7) {
+      switch (_this.data.language) {
+        case LANGUAGES.en:
+          weekdays = WEEKDAYS_EN
+          break;
+        case LANGUAGES.zh:
+          weekdays = WEEKDAYS_ZH
+          break;
+        default:
+          weekdays = WEEKDAYS_ZH
+          break;
+      }
     }
     _this.setData({
       currenDate,
@@ -293,6 +296,7 @@ Component({
         currenDate
       })
       _this.refreshCalendar();
+      this.triggerEvent('OnMonthChange', currenDate);
     },
     next: function() {
       let currenDate = _this.getNextMonthFirstDay(_this.data.currenDate);
@@ -300,6 +304,7 @@ Component({
         currenDate
       })
       _this.refreshCalendar();
+      this.triggerEvent('OnMonthChange', currenDate);
     },
     showPicker: function() {
       _this.setData({
