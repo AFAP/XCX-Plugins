@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    weekdays: ['周日', '一', '二', '三', '四', '五', '六'],
     daysStyle: [{
       id: '2019-07-30',
       style: 'background: #67C23A;color: #666; border-radius: 30px;'
@@ -20,6 +21,8 @@ Page({
     }]
   },
 
+
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -30,6 +33,13 @@ Page({
     console.log(event.detail)
     wx.showToast({
       title: '日期被点击，具体信息请看Console信息',
+      icon: 'none'
+    })
+  },
+  onMonthChange: function (event) {
+    console.log(event.detail)
+    wx.showToast({
+      title: '月份变换，具体信息请看Console信息',
       icon: 'none'
     })
   }

@@ -1,1 +1,4 @@
-<calendar bindOnDayClick="onDayClick" days-style='{{daysStyle}}'/>
+<calendar bindOnDayClick="onDayClick" bindOnMonthChange='onMonthChange' days-style='{{daysStyle}}' />
+
+
+<!-- <calendar mode='pickerRange' bindOnDayClick="onDayClick" days-style='{{daysStyle1}}' /> -->
