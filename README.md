@@ -49,6 +49,8 @@ year | Number | 当前年份 | 年份
 month | Number | 当前月份 | 月份，注意：此处值从1开始，1-12
 selectedDate | String | 当天 | 被选中日期，格式yyyy-MM-DD
 daysStyle | Array | 无 | 指定日期样式数组，如：[{id: '2019-07-30',style: 'color: red;'}]会改变2019-07-30的日期颜色，此处是style，可以自由设置属性，会改变整个单元格样式
+dotDays | Array | 无 | 指定日期显示标记点，如：[ '2019-10-30']
+dotColor | String | red | 点颜色
 
 示例图片：
 
