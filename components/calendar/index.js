@@ -48,6 +48,10 @@ Component({
       type: Boolean,
       value: true
     },
+    showDot: { // 是否日期下的小点
+      type: Boolean,
+      value: true
+    },
     year: {
       type: Number,
       value: -1
@@ -63,6 +67,14 @@ Component({
     daysStyle: {
       type: Array,
       value: []
+    },
+    dotColor: {
+      type: String,
+      value: '#f00'
+    },
+    dotDays: {
+      type: Array,
+      value: []
     }
   },
   data: {
@@ -73,6 +85,14 @@ Component({
     endDateObj: null,
     formatValue: '',
     showCalendar: false
+  },
+  observers: {
+    'dotDays': function(dotDays) {
+      _this.refreshCalendar();
+    },
+    'daysStyle': function(dotDays) {
+      _this.refreshCalendar();
+    }
   },
   created: function() {
     _this = this;
@@ -90,13 +110,8 @@ Component({
         selectedDate: ''
       })
     } else {
-      let selectedDate = _this.data.selectedDate;
-      if (selectedDate == '') {
-        selectedDate = _this.formatDate(new Date().getTime());
-      }
       _this.setData({
-        formatValue: selectedDate,
-        selectedDate
+        formatValue: _this.data.selectedDate
       })
     }
     let now = new Date();
@@ -109,20 +124,17 @@ Component({
       month = now.getMonth() + 1;
     }
     let currenDate = new Date(year + '/' + month + '/1');
-    let weekdays = _this.data.weekdays;
-    console.log(weekdays)
-    if (weekdays.length != 7) {
-      switch (_this.data.language) {
-        case LANGUAGES.en:
-          weekdays = WEEKDAYS_EN
-          break;
-        case LANGUAGES.zh:
-          weekdays = WEEKDAYS_ZH
-          break;
-        default:
-          weekdays = WEEKDAYS_ZH
-          break;
-      }
+    let weekdays = WEEKDAYS_ZH;
+    switch (_this.data.language) {
+      case LANGUAGES.en:
+        weekdays = WEEKDAYS_EN
+        break;
+      case LANGUAGES.zh:
+        weekdays = WEEKDAYS_ZH
+        break;
+      default:
+        weekdays = WEEKDAYS_ZH
+        break;
     }
     _this.setData({
       currenDate,
@@ -201,6 +213,10 @@ Component({
             element.text = '';
             element.clickable = false;
           }
+        }
+        if (this.data.dotDays.includes(element.id)) {
+          element.showDot = true
+          element.dotColor = this.data.dotColor
         }
         if (_this.data.beginDateObj != null && _this.data.endDateObj != null) {
           const start = _this.data.beginDateObj.getTime();
@@ -296,7 +312,6 @@ Component({
         currenDate
       })
       _this.refreshCalendar();
-      this.triggerEvent('OnMonthChange', currenDate);
     },
     next: function() {
       let currenDate = _this.getNextMonthFirstDay(_this.data.currenDate);
@@ -304,7 +319,6 @@ Component({
         currenDate
       })
       _this.refreshCalendar();
-      this.triggerEvent('OnMonthChange', currenDate);
     },
     showPicker: function() {
       _this.setData({
@@ -314,6 +328,9 @@ Component({
     onDayClick: function(event) {
       let index = event.currentTarget.dataset.index;
       let day = _this.data.days[index];
+      if (!day.clickable) {
+        return
+      }
       if (_this.data.mode == MODES.normal || _this.data.mode == MODES.picker) {
         let selectedDate = _this.formatDate(day.date)
         let formatValue = _this.formatDate(day.date)

@@ -18,7 +18,7 @@
           <view class='day-content {{day.className}}' style='{{day.style}}'>
             <text>{{day.text}}</text>
             <view class='content-sub'>
-              <view class='content-sub-dot' wx:if='{{day.showDot}}' />
+              <view  wx:if='{{day.showDot}}' class='content-sub-dot' style="background: {{day.dotColor}}" />
             </view>
           </view>
         </view>
