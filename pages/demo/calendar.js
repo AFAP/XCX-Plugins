@@ -18,7 +18,7 @@ Page({
       id: '2019-08-30',
       style: 'background: #0A2355;color: #fff; border-radius: 30px;'
     }],
-    dotDays: ['2019-10-20']
+    dotDays: ['2019-11-20']
   },
 
 
@@ -45,9 +45,9 @@ Page({
   },
   addDot:function(){
     this.setData({
-      dotDays: ["2019-10-01", "2019-10-11"],
+      dotDays: ["2019-11-01", "2019-11-11"],
       daysStyle: [{
-        id: '2019-10-30',
+        id: '2019-11-20',
         style: 'background: #67C23A;color: #666; border-radius: 30px;'
       }]
     })

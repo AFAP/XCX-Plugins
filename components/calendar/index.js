@@ -78,6 +78,7 @@ Component({
     }
   },
   data: {
+    initFinished: false,
     selectedClassName: '',
     currenDate: null, // 当前显示月份的第一天
     days: [],
@@ -88,10 +89,14 @@ Component({
   },
   observers: {
     'dotDays': function(dotDays) {
-      _this.refreshCalendar();
+      if (_this.data.initFinished) {
+        _this.refreshCalendar();
+      }
     },
     'daysStyle': function(dotDays) {
-      _this.refreshCalendar();
+      if (_this.data.initFinished) {
+        _this.refreshCalendar();
+      }
     }
   },
   created: function() {
@@ -137,6 +142,7 @@ Component({
         break;
     }
     _this.setData({
+      initFinished:true,
       currenDate,
       weekdays,
       selectedClassName
