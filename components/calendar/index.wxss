@@ -6,6 +6,7 @@
 .fixed {
   background: #fff;
   position: fixed;
+  z-index: 99;
 }
 
 .form-item {

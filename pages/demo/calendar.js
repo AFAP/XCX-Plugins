@@ -1,11 +1,6 @@
-// pages/demo/calendar.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-     daysStyle: [{
+    daysStyle: [{
       id: '2019-07-30',
       style: 'background: #67C23A;color: #666; border-radius: 30px;'
     }, {
@@ -20,12 +15,6 @@ Page({
     }],
     dotDays: ['2019-11-20']
   },
-
-
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
 
   },
@@ -36,19 +25,22 @@ Page({
       icon: 'none'
     })
   },
-  onMonthChange: function (event) {
+  onMonthChange: function(event) {
     console.log(event.detail)
     wx.showToast({
       title: '月份变换，具体信息请看Console信息',
       icon: 'none'
     })
   },
-  addDot:function(){
+  addDot: function() {
     this.setData({
       dotDays: ["2019-11-01", "2019-11-11"],
       daysStyle: [{
         id: '2019-11-20',
-        style: 'background: #67C23A;color: #666; border-radius: 30px;'
+        style: 'color: #F00;'
+      }, {
+        id: '2019-11-21',
+        style: 'color: #F00;'
       }]
     })
   }

@@ -1,6 +1,6 @@
-<calendar class='content' mode='normal' dot-days="{{dotDays}}" dot-color="#0000ff" show-more-days="{{false}}" title-custom='true' selected-date='2019-08-11' year='2019' selected-mode='square' bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
+<calendar class='content' mode='normal'  dot-days="{{dotDays}}" dot-color="#0000ff" show-more-days="{{true}}" title-custom='true' selected-date='2019-08-11' year='2019'   bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
 
 
 
 
-<button bindtap="addDot">刷新数据</button>
+<button bindtap="addDot" >刷新数据</button>
