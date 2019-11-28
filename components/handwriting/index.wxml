@@ -1,0 +1,43 @@
+<view class="atom-container-weidget">
+  <image class="atom-handwriting-image" mode="aspectFit" bindtap='onEdit' src="{{tempFilePath}}" />
+  <image class="btn-clear" src='../images/handwriting_clear.svg' bindtap='clearHandWriting' />
+</view>
+
+<view class="atom-container-canvas" style="display: {{showCanvas ? '' : 'none'}}">
+
+  <canvas class="atom-canvas-handwriting" style="width: {{canvasWidth}}px;height: {{canvasHeidht}}px" canvas-id="canvas-handwriting" bindtouchstart="onTouchStart" bindtouchmove="onTouchmove" bindtouchend="onTouchEnd" binderror="onError"></canvas>
+
+  <view class="atom-handwriting-tools">
+    <image src='../images/paint_brush.svg' bindtap='showBrush' />
+    <image src='../images/palette.svg' bindtap='showPalette' />
+    <view bindtap="finishDraw">完成</view>
+  </view>
+
+  <!-- <view class="atom-container-palette" style="display: {{showPalette ? '' : 'none'}}">
+    <view class="atom-palette-block" wx:for="{{colorBlocks}}" wx:key="{{item}}">
+      <view style="background-color: {{item}}" data-color="{{item}}" bindtap="changeColor"></view>
+    </view>
+  </view> -->
+
+  <!-- <view class="atom-container-brush" style="display: {{showBrush ? '' : 'none'}}">
+    <slider bindchange="onBrushChange" value="{{strokeWidth}}" step="1" min="1" max="10" show-value/>
+  </view> -->
+
+  <cover-view class="atom-container-palette" style="display: {{showPalette ? '' : 'none'}}">
+    <cover-view class="atom-palette-block" wx:for="{{colorBlocks}}" wx:key="{{item}}">
+      <cover-view class="atom-palette-block-view" style="background-color: {{item}}" data-color="{{item}}" bindtap="changeColor"></cover-view>
+    </cover-view>
+  </cover-view>
+
+
+
+
+  <cover-view class="atom-container-brush" style="display: {{showBrush ? '' : 'none'}}">
+    <button class="atom-container-brush-button" data-width="3" bindtap="onBrushChange">细</button>
+    <button class="atom-container-brush-button" data-width="6" bindtap="onBrushChange">适中</button>
+    <button class="atom-container-brush-button" data-width="10" bindtap="onBrushChange">粗</button>
+  </cover-view>
+
+
+
+</view>

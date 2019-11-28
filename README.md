@@ -1,7 +1,7 @@
 # XCX-Plugins
 小程序组件
 
-## 使用方法
+## 日历控件：
 ### 1.声明组件
 下载代码，将components文件夹拷贝至项目根目录（与app.json平级），在`app.json`中声明需要使用的插件，这里的声明是全局的，pages下的页面都能直接用，也可以在某一个page对应的json文件中单独声明。
 
@@ -34,8 +34,6 @@
 <calendar bindOnDayClick="onDayClick" days-style='{{daysStyle}}' />
 ```
 ### 3.可设置属性
-* calendar
-
 属性名称 |类型| 默认值 | 说明  
 :-: | :-: | :-: | :- 
 mode | String | normal | 模式：<br/>normal:常规；<br/>picker: 下拉选取日期<br/>pickerRange: 下拉选择区间
@@ -52,9 +50,63 @@ daysStyle | Array | 无 | 指定日期样式数组，如：[{id: '2019-07-30',st
 dotDays | Array | 无 | 指定日期显示标记点，如：[ '2019-10-30']
 dotColor | String | red | 点颜色
 
+### 4.监听事件
+事件名称 | 说明  
+:-: | :- 
+bindOnDayClick | 点击某一天时触发：<br/>event.detail为被点击日期的Date对象
+bindOnRangeComplete | 范围选择完毕时触发：<br/>event.detail为{begin:dateObj,end:dateObj}
+bindOnMonthChange | 切换月份时触发：<br/>event.detail为当前月份第一天的Date对象
+
 示例图片：
 
 ![常规模式使用示例.png](https://upload-images.jianshu.io/upload_images/2355731-10d0e65ade8b6341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![自定义日期样式.png](https://upload-images.jianshu.io/upload_images/2355731-dd0aea48666590b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![日期范围选择.png](https://upload-images.jianshu.io/upload_images/2355731-47c1db8dbcdb91aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+## 手写控件：
+### 1.声明组件
+下载代码，将components文件夹拷贝至项目根目录（与app.json平级），在`app.json`中声明需要使用的插件，这里的声明是全局的，pages下的页面都能直接用，也可以在某一个page对应的json文件中单独声明。
+
+```
+{
+  "pages": [
+    "pages/demo/handwriting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "handwriting": "/components/handwriting/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
+```
+ *组件的名字可以自定义，如handwriting可以改成handwriting666，页面内使用时保持一致即可。
+
+### 2.使用组件
+最简单的方式：
+```
+<handwriting />
+```
+带有一些默认设置的方式
+```
+<handwriting bindOnComplete="onHnadwritingComplete" />
+```
+### 3.可设置属性
+* 暂无
+
+### 4.监听事件
+事件名称 | 说明  
+:-: | :- 
+bindOnComplete | 点击完成时触发：<br/>event.detail为绘制得到的图片临时存储路径
+
+示例图片：
+
+![设置颜色.png](https://upload-images.jianshu.io/upload_images/2355731-d0ed280fbab15f40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![设置笔头粗细.png](https://upload-images.jianshu.io/upload_images/2355731-9a3c7509a1261820.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![控件显示效果.png](https://upload-images.jianshu.io/upload_images/2355731-cc02c4fbaf5d596f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

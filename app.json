@@ -1,6 +1,8 @@
 {
   "pages": [
+    "pages/demo/handwriting",
     "pages/demo/calendar"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -9,7 +11,8 @@
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
-    "calendar": "/components/calendar/index"
+    "calendar": "/components/calendar/index",
+    "handwriting": "/components/handwriting/index"
   },
   "sitemapLocation": "sitemap.json"
 }

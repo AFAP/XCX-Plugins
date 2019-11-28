@@ -315,6 +315,7 @@
          currenDate
        })
        this.refreshCalendar();
+       this.triggerEvent('OnMonthChange', currenDate);
      },
      next: function() {
        let currenDate = this.getNextMonthFirstDay(this.data.currenDate);
@@ -322,6 +323,7 @@
          currenDate
        })
        this.refreshCalendar();
+       this.triggerEvent('OnMonthChange', currenDate);
      },
      showPicker: function() {
        this.setData({

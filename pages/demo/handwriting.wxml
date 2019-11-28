@@ -1,0 +1,6 @@
+<view class='item'>
+  <view class='label'>DEMO:</view>
+  <view class='content'>
+    <handwriting bindOnComplete="onHnadwritingComplete" />
+  </view>
+</view>

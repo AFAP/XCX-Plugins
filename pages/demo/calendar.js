@@ -25,6 +25,10 @@ Page({
       icon: 'none'
     })
   },
+  onRangeComplete: function (event) {
+    console.log(event.detail)
+     
+  },
   onMonthChange: function(event) {
     console.log(event.detail)
     wx.showToast({
@@ -40,7 +44,7 @@ Page({
         style: 'color: #F00;'
       }, {
         id: '2019-11-21',
-        style: 'color: #F00;'
+          style: 'background: #0A2355;color: #fff; border-radius: 30px;'
       }]
     })
   }
