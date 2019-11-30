@@ -63,7 +63,7 @@ bindOnMonthChange | 切换月份时触发：<br/>event.detail为当前月份第�
 ![自定义日期样式.png](https://upload-images.jianshu.io/upload_images/2355731-dd0aea48666590b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![日期范围选择.png](https://upload-images.jianshu.io/upload_images/2355731-47c1db8dbcdb91aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 手写控件：
+## 手写绘制控件：
 ### 1.声明组件
 下载代码，将components文件夹拷贝至项目根目录（与app.json平级），在`app.json`中声明需要使用的插件，这里的声明是全局的，pages下的页面都能直接用，也可以在某一个page对应的json文件中单独声明。
 
