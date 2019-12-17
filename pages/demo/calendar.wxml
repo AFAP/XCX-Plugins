@@ -1,4 +1,4 @@
-<calendar class='content' mode='normal'  dot-days="{{dotDays}}" dot-color="#0000ff" show-more-days="{{false}}" title-custom='true' selected-date='2019-08-11' year='2019'  bindOnMonthChange="onMonthChange" bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
+<calendar class='content' mode='normal'  dot-days="{{dotDays}}" dot-color="#0000ff" show-more-days="{{false}}" title-custom='true' selected-date='{{selectedDate}}'  begin-date='{{beginDate}}' end-date='{{endDate}}' year='2019'  bindOnMonthChange="onMonthChange" bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
 
 
 

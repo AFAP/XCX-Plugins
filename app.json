@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/demo/handwriting",
-    "pages/demo/calendar"
+    "pages/demo/calendar",
+    "pages/demo/handwriting"
+    
     
   ],
   "window": {
