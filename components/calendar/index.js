@@ -110,7 +110,6 @@
          this.refreshCalendar();
        }
      }
-     
    },
    created: function() {},
    attached: function() {
