@@ -5,9 +5,9 @@
   </view>
   <view wx:if='{{mode == "normal" || showCalendar}}' class='calendar{{mode != "normal"? " fixed" : ""}}'>
     <view class='calendar-title'>
-      <image src='../images/btn_pre.svg' bindtap='pre' />
+      <image src='../images/btn_pre.svg' wx:if="{{showMoreMonths}}" bindtap='pre' />
       <text>{{title}}</text>
-      <image src='../images/btn_next.svg' bindtap='next' />
+      <image src='../images/btn_next.svg' wx:if="{{showMoreMonths}}" bindtap='next' />
     </view>
     <view class='container-days'>
       <view class='day day-header' wx:for='{{weekdays}}' wx:for-index='index' wx:for-item='weekday' wx:key='{{index}}'>

@@ -43,6 +43,10 @@
        type: String,
        value: 'round'
      },
+     showMoreMonths: { // 是否上/下月
+       type: Boolean,
+       value: true
+     },
      showMoreDays: { // 是否显示非本月的日期
        type: Boolean,
        value: true

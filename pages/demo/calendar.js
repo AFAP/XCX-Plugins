@@ -16,7 +16,8 @@ Page({
     dotDays: ['2019-12-20'],
     selectedDate:'2019-12-02',
     beginDate:'2019-12-10',
-    endDate:'2019-12-22'
+    endDate:'2019-12-22',
+    showMoreMonths:true
   },
   onLoad: function(options) {
 

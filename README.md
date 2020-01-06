@@ -42,6 +42,7 @@ title | String | xxx年x月 | 日历标题,如设定值，在月份切换时需�
 weekdays | Array | ['日', '一', '二', '三', '四1', '五', '六'] | 如自定义，数组长度需为7
 language | String | ZH | 语言：<br/>ZH：中文<br/>EN：英语，不同语言，年月和星期显示不同
 selectedMode | String | round | 被选中日期背景模式：<br/>round：圆形<br/>square方形
+showMoreMonths | Boolean | true | 是否显示上下月份
 showMoreDays | Boolean | true | 是否显示非本月日期
 year | Number | 当前年份 | 年份
 month | Number | 当前月份 | 月份，注意：此处值从1开始，1-12
@@ -61,9 +62,9 @@ bindOnMonthChange | 切换月份时触发：<br/>event.detail为当前月份第�
 
 示例图片：
 
-![常规模式使用示例.png](https://upload-images.jianshu.io/upload_images/2355731-10d0e65ade8b6341.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![自定义日期样式.png](https://upload-images.jianshu.io/upload_images/2355731-dd0aea48666590b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![日期范围选择.png](https://upload-images.jianshu.io/upload_images/2355731-47c1db8dbcdb91aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![常规模式使用示例.png](https://upload-images.jianshu.io/upload_images/2355731-10d0e65ade8b6341.png)
+![自定义日期样式.png](https://upload-images.jianshu.io/upload_images/2355731-dd0aea48666590b1.png)
+![日期范围选择.png](https://upload-images.jianshu.io/upload_images/2355731-47c1db8dbcdb91aa.png)
 
 ## 手写绘制控件：
 ### 1.声明组件
@@ -107,8 +108,8 @@ bindOnComplete | 点击完成时触发：<br/>event.detail为绘制得到的图�
 
 示例图片：
 
-![设置颜色.png](https://upload-images.jianshu.io/upload_images/2355731-d0ed280fbab15f40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![设置颜色.png](https://upload-images.jianshu.io/upload_images/2355731-d0ed280fbab15f40.png)
 
-![设置笔头粗细.png](https://upload-images.jianshu.io/upload_images/2355731-9a3c7509a1261820.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![设置笔头粗细.png](https://upload-images.jianshu.io/upload_images/2355731-9a3c7509a1261820.png)
 
-![控件显示效果.png](https://upload-images.jianshu.io/upload_images/2355731-cc02c4fbaf5d596f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![控件显示效果.png](https://upload-images.jianshu.io/upload_images/2355731-cc02c4fbaf5d596f.png)
