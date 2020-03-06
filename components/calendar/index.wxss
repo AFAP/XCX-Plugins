@@ -123,8 +123,9 @@
 }
 
 .content-sub {
-  font-size: 8pt;
+  font-size: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

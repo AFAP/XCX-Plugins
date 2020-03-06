@@ -86,6 +86,10 @@
      dotDays: {
        type: Array,
        value: []
+     },
+     daysDesc: {
+       type: Array,
+       value: []
      }
    },
    data: {
@@ -99,17 +103,22 @@
      showCalendar: false
    },
    observers: {
-     'dotDays': function(dotDays) {
+     'dotDays': function() {
        if (this.data.initFinished) {
          this.refreshCalendar();
        }
      },
-     'daysStyle': function( ) {
+     'daysDesc': function() {
        if (this.data.initFinished) {
          this.refreshCalendar();
        }
      },
-     'selectedDate': function ( ) {
+     'daysStyle': function() {
+       if (this.data.initFinished) {
+         this.refreshCalendar();
+       }
+     },
+     'selectedDate': function() {
        if (this.data.initFinished) {
          this.refreshCalendar();
        }
@@ -171,10 +180,12 @@
        weekdays,
        selectedClassName
      })
+     console.log('插件-initFinished')
      this.refreshCalendar();
    },
    methods: {
      refreshCalendar: function() {
+       console.log('refreshCalendar')
        const now = new Date();
        let currenDate = this.data.currenDate;
        let year = currenDate.getFullYear();
@@ -247,6 +258,14 @@
          if (this.data.dotDays.includes(element.id)) {
            element.showDot = true
            element.dotColor = this.data.dotColor
+         }
+         // 添加日期描述
+         let dayDesc = this.data.daysDesc.find(function(value, index, arr) {
+           return value.id == element.id;
+         })
+         if (dayDesc) {
+           element.dayDesc = dayDesc.desc
+           element.dayDescStyle = dayDesc.style
          }
          if (this.data.beginDateObj != null && this.data.endDateObj != null) {
            const start = this.data.beginDateObj.getTime();

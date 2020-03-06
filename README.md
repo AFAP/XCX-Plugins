@@ -51,6 +51,7 @@ beginDate | String | 开始日期 | 范围模式开始日期，格式yyyy-MM-DD
 endDate | String | 结束日期 | 范围模式结束日期，格式yyyy-MM-DD
 daysStyle | Array | 无 | 指定日期样式数组，如：[{id: '2019-07-30',style: 'color: red;'}]会改变2019-07-30的日期颜色，此处是style，可以自由设置属性，会改变整个单元格样式
 dotDays | Array | 无 | 指定日期显示标记点，如：[ '2019-10-30']
+daysDesc | Array | 无 | 指定日期描述，如：[{id: "2020-03-02",desc: "有事",style: 'color: #FF0000;'}]
 dotColor | String | red | 点颜色
 
 ### 4.监听事件

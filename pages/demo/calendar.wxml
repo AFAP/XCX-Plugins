@@ -1,4 +1,9 @@
-<calendar class='content' mode='normal'  dot-days="{{dotDays}}" dot-color="#0000ff" show-more-days="{{false}}" show-more-months="{{showMoreMonths}}" title-custom='true' selected-date='{{selectedDate}}'  begin-date='{{beginDate}}' end-date='{{endDate}}' year='2019'  bindOnMonthChange="onMonthChange" bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
+<!-- <button bindtap="addDot" >刷新数据</button>
+<button bindtap="addDot" >刷新数据</button>
+<button bindtap="addDot" >刷新数据</button>
+<button bindtap="addDot" >刷新数据</button>  -->
+
+<calendar id="calendar" class='content' mode='normal'  dot-days="{{dotDays}}"  days-desc="{{daysDesc}}" dot-color="#0000ff" show-more-days="{{showMoreDays}}" show-more-months="{{showMoreMonths}}" title-custom='true' selected-date='{{selectedDate}}'  begin-date='{{beginDate}}' end-date='{{endDate}}' year='2019'  bindOnMonthChange="onMonthChange" bindOnDayClick='onDayClick' bindOnRangeComplete='onRangeComplete' language='' days-style='{{daysStyle}}' />
 
 
 
