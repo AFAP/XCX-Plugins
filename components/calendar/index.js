@@ -122,6 +122,18 @@
        if (this.data.initFinished) {
          this.refreshCalendar();
        }
+     },
+     'beginDate': function () {
+       if (this.data.initFinished) {
+         this.refreshRangeDate();
+         this.refreshCalendar();
+       }
+     },
+     'endDate': function () {
+       if (this.data.initFinished) {
+         this.refreshRangeDate();
+         this.refreshCalendar();
+       }
      }
    },
    created: function() {},
@@ -133,20 +145,7 @@
        selectedClassName = 'day-selected-round'
      }
      if (this.data.mode == MODES.pickerRange) {
-       // 范围选择模式，不存在被选中的单一日期,
-       if (this.data.beginDate != '' && this.data.endDate != '') {
-         let beginDateObj = new Date(this.data.beginDate.replace('-', '/'))
-         let endDateObj = new Date(this.data.endDate.replace('-', '/'))
-         let formatValue = this.formatDate(beginDateObj) + ' 至 ' + this.formatDate(endDateObj)
-         this.setData({
-           formatValue,
-           beginDateObj,
-           endDateObj
-         })
-       }
-       this.setData({
-         selectedDate: ''
-       })
+       this.refreshRangeDate();
      } else {
        this.setData({
          formatValue: this.data.selectedDate
@@ -184,6 +183,22 @@
      this.refreshCalendar();
    },
    methods: {
+     refreshRangeDate:function(){
+       // 范围选择模式，不存在被选中的单一日期,
+       if (this.data.beginDate != '' && this.data.endDate != '') {
+         let beginDateObj = new Date(this.data.beginDate.replace('-', '/'))
+         let endDateObj = new Date(this.data.endDate.replace('-', '/'))
+         let formatValue = this.formatDate(beginDateObj) + ' 至 ' + this.formatDate(endDateObj)
+         this.setData({
+           formatValue,
+           beginDateObj,
+           endDateObj
+         })
+       }
+       this.setData({
+         selectedDate: ''
+       })
+     },
      refreshCalendar: function() {
        console.log('refreshCalendar')
        const now = new Date();

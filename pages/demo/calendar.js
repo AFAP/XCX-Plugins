@@ -61,26 +61,29 @@ Page({
     })
   },
   addDot: function() {
-
     this.setData({
-      selectedDate: '2020-03-12',
-      dotDays: ["2020-03-01", "2020-03-03"],
-      daysDesc: [{
-        id: "2020-03-02",
-        desc: "好天气",
-        style: 'color: #FF0000; '
-      },{
-        id: "2020-03-22",
-        desc: "有事",
-        style: 'color: #aaa; '
-      }],
-      daysStyle: [{
-        id: '2020-03-20',
-        style: 'color: #F00;'
-      }, {
-        id: '2020-03-21',
-        style: 'background: #0A2355;color: #fff; border-radius: 30px;'
-      }]
+      beginDate: '2020-03-22',
+      endDate: '2020-03-24'
     })
+    // this.setData({
+    //   selectedDate: '2020-03-12',
+    //   dotDays: ["2020-03-01", "2020-03-03"],
+    //   daysDesc: [{
+    //     id: "2020-03-02",
+    //     desc: "好天气",
+    //     style: 'color: #FF0000; '
+    //   },{
+    //     id: "2020-03-22",
+    //     desc: "有事",
+    //     style: 'color: #aaa; '
+    //   }],
+    //   daysStyle: [{
+    //     id: '2020-03-20',
+    //     style: 'color: #F00;'
+    //   }, {
+    //     id: '2020-03-21',
+    //     style: 'background: #0A2355;color: #fff; border-radius: 30px;'
+    //   }]
+    // })
   }
 })
