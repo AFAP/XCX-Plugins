@@ -1,23 +1,23 @@
 Page({
   data: {
+    language: 'ZH',
     daysStyle: [{
-      id: '2020-01-30',
+      id: '2020-04-30',
       style: 'background: #67C23A;color: #666; border-radius: 30px;'
     }, {
-      id: '2019-12-10',
+      id: '2019-04-10',
       style: 'background: #E6A23C;color: #ff0000;'
     }, {
-      id: '2019-12-18',
+      id: '2019-04-18',
       style: 'background: #F56C6C;color: #FFF000;'
-    }, {
-      id: '2019-12-30',
-      style: 'background: #0A2355;color: #fff; border-radius: 30px;'
     }],
-    dotDays: ['2019-12-20'],
+    dotDays: ['2020-04-20'],
     daysDesc: [{}],
-    selectedDate: '2019-12-02',
-    beginDate: '2019-12-10',
-    endDate: '2019-12-22',
+    minDate:'2020-03-03',
+    maxDate:'',
+    selectedDate: '2020-04-22',
+    beginDate: '2020-04-01',
+    endDate: '2020-04-12',
     showMoreMonths: true,
     showMoreDays: true
   },
@@ -63,7 +63,8 @@ Page({
   addDot: function() {
     this.setData({
       beginDate: '2020-03-22',
-      endDate: '2020-03-24'
+      endDate: '2020-03-24',
+      maxDate: '2020-04-24'
     })
     // this.setData({
     //   selectedDate: '2020-03-12',

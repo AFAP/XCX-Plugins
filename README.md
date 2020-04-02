@@ -49,6 +49,8 @@ month | Number | 当前月份 | 月份，注意：此处值从1开始，1-12
 selectedDate | String | 当天 | 被选中日期，格式yyyy-MM-DD
 beginDate | String | 开始日期 | 范围模式开始日期，格式yyyy-MM-DD
 endDate | String | 结束日期 | 范围模式结束日期，格式yyyy-MM-DD
+minDate | String | 最小日期 | 可选的最小日期，格式yyyy-MM-DD，小于该日期的日期，不可点击
+maxDate | String | 最大日期 | 可选的最大日期，格式yyyy-MM-DD，大于该日期的日期，不可点击
 daysStyle | Array | 无 | 指定日期样式数组，如：[{id: '2019-07-30',style: 'color: red;'}]会改变2019-07-30的日期颜色，此处是style，可以自由设置属性，会改变整个单元格样式
 dotDays | Array | 无 | 指定日期显示标记点，如：[ '2019-10-30']
 daysDesc | Array | 无 | 指定日期描述，如：[{id: "2020-03-02",desc: "有事",style: 'color: #FF0000;'}]

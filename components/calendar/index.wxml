@@ -13,7 +13,7 @@
       <view class='day day-header' wx:for='{{weekdays}}' wx:for-index='index' wx:for-item='weekday' wx:key='index'>
         {{weekday}}
       </view>
-      <view class='day{{day.currentMonth? " day-current-month" : ""}}' wx:for='{{days}}' wx:for-index='index' wx:for-item='day' wx:key='id' data-index='{{index}}' bindtap='onDayClick'>
+      <view class='day{{day.currentMonth? " day-current-month" : ""}}{{day.clickable? "" : " day-not-clickable"}}' wx:for='{{days}}' wx:for-index='index' wx:for-item='day' wx:key='id' data-index='{{index}}' bindtap='onDayClick'>
         <view class='day-range {{day.rangeClassName}}'>
           <view class='day-content {{day.className}}' style='{{day.style}}'>
             <text>{{day.text}}</text>

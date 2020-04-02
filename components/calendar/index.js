@@ -1,3 +1,4 @@
+ // 最后更新日期：20200402
  const MODES = {
    normal: 'normal',
    picker: 'picker',
@@ -75,6 +76,14 @@
        type: String,
        value: ''
      },
+     minDate: {
+       type: String,
+       value: ''
+     },
+     maxDate: {
+       type: String,
+       value: ''
+     },
      daysStyle: {
        type: Array,
        value: []
@@ -123,13 +132,13 @@
          this.refreshCalendar();
        }
      },
-     'beginDate': function () {
+     'beginDate': function() {
        if (this.data.initFinished) {
          this.refreshRangeDate();
          this.refreshCalendar();
        }
      },
-     'endDate': function () {
+     'endDate': function() {
        if (this.data.initFinished) {
          this.refreshRangeDate();
          this.refreshCalendar();
@@ -183,7 +192,7 @@
      this.refreshCalendar();
    },
    methods: {
-     refreshRangeDate:function(){
+     refreshRangeDate: function() {
        // 范围选择模式，不存在被选中的单一日期,
        if (this.data.beginDate != '' && this.data.endDate != '') {
          let beginDateObj = new Date(this.data.beginDate.replace('-', '/'))
@@ -250,7 +259,16 @@
        }
        days = [...days, ...days_next]
 
-
+       let minDateObj = null,
+         maxDateObj = null;
+       // 设置了最小值时需检测下当前点击是否小于最小值
+       if (this.data.minDate != '') {
+         minDateObj = new Date(this.data.minDate.replace('-', '/'));
+       }
+       // 设置了最大值时需检测下当前点击是否大于最大值
+       if (this.data.maxDate != '') {
+         maxDateObj = new Date(this.data.maxDate.replace('-', '/'));
+       }
        const nowFormat = this.formatDate(now.getTime());
        // 统一处理一些特殊属性
        days.forEach(element => {
@@ -267,6 +285,18 @@
              element.clickable = true;
            } else {
              element.text = '';
+             element.clickable = false;
+           }
+         }
+         // 设置了最小值时需检测下当前点击是否小于最小值
+         if (minDateObj != null) {
+           if (element.date.getTime() < minDateObj.getTime()) {
+             element.clickable = false;
+           }
+         }
+         // 设置了最大值时需检测下当前点击是否大于最大值
+         if (maxDateObj != null) {
+           if (element.date.getTime() > maxDateObj.getTime()) {
              element.clickable = false;
            }
          }
@@ -396,6 +426,22 @@
        let day = this.data.days[index];
        if (!day.clickable) {
          return
+       }
+       // 设置了最小值时需检测下当前点击是否小于最小值
+       if (this.data.minDate != '') {
+         let minDateObj = new Date(this.data.minDate.replace('-', '/'));
+         if (day.date.getTime() < minDateObj.getTime()) {
+           console.log('当前点击日期小于可选最小值');
+           return;
+         }
+       }
+       // 设置了最大值时需检测下当前点击是否大于最大值
+       if (this.data.maxDate != '') {
+         let maxDateObj = new Date(this.data.maxDate.replace('-', '/'));
+         if (day.date.getTime() > maxDateObj.getTime()) {
+           console.log('当前点击日期大于可选最大值');
+           return;
+         }
        }
        if (this.data.mode == MODES.normal || this.data.mode == MODES.picker) {
          let selectedDate = this.formatDate(day.date)

@@ -83,6 +83,9 @@
 .day-current-month {
   color: #000;
 }
+.day-not-clickable{
+ color: #aaa;
+}
 
 .today {
   color: #28f;
