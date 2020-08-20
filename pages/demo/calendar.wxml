@@ -12,6 +12,7 @@
   show-more-days="{{showMoreDays}}"
   show-more-months="{{showMoreMonths}}"
   title-custom='true'
+  selected-mode='square'
   selected-date='{{selectedDate}}'
   begin-date='{{beginDate}}'
   end-date='{{endDate}}'

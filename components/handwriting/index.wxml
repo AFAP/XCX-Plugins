@@ -1,6 +1,6 @@
 <view class="atom-container-weidget">
   <image class="atom-handwriting-image" mode="aspectFit" bindtap='onEdit' src="{{tempFilePath}}" />
-  <image class="btn-clear" src='../images/handwriting_clear.svg' bindtap='clearHandWriting' />
+  <image class="btn-clear" src='./images/handwriting_clear.svg' bindtap='clearHandWriting' />
 </view>
 
 <view class="atom-container-canvas" style="display: {{showCanvas ? '' : 'none'}}">
@@ -8,8 +8,8 @@
   <canvas class="atom-canvas-handwriting" style="width: {{canvasWidth}}px;height: {{canvasHeidht}}px" canvas-id="canvas-handwriting" bindtouchstart="onTouchStart" bindtouchmove="onTouchmove" bindtouchend="onTouchEnd" binderror="onError"></canvas>
 
   <view class="atom-handwriting-tools">
-    <image src='../images/paint_brush.svg' bindtap='showBrush' />
-    <image src='../images/palette.svg' bindtap='showPalette' />
+    <image src='./images/paint_brush.svg' bindtap='showBrush' />
+    <image src='./images/palette.svg' bindtap='showPalette' />
     <view bindtap="finishDraw">完成</view>
   </view>
 

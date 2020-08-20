@@ -195,8 +195,8 @@
      refreshRangeDate: function() {
        // 范围选择模式，不存在被选中的单一日期,
        if (this.data.beginDate != '' && this.data.endDate != '') {
-         let beginDateObj = new Date(this.data.beginDate.replace('-', '/'))
-         let endDateObj = new Date(this.data.endDate.replace('-', '/'))
+         let beginDateObj = new Date(this.data.beginDate.replace(/-/g, '/'))
+         let endDateObj = new Date(this.data.endDate.replace(/-/g, '/'))
          let formatValue = this.formatDate(beginDateObj) + ' 至 ' + this.formatDate(endDateObj)
          this.setData({
            formatValue,
@@ -263,11 +263,11 @@
          maxDateObj = null;
        // 设置了最小值时需检测下当前点击是否小于最小值
        if (this.data.minDate != '') {
-         minDateObj = new Date(this.data.minDate.replace('-', '/'));
+         minDateObj = new Date(this.data.minDate.replace(/-/g, '/'));
        }
        // 设置了最大值时需检测下当前点击是否大于最大值
        if (this.data.maxDate != '') {
-         maxDateObj = new Date(this.data.maxDate.replace('-', '/'));
+         maxDateObj = new Date(this.data.maxDate.replace(/-/g, '/'));
        }
        const nowFormat = this.formatDate(now.getTime());
        // 统一处理一些特殊属性
@@ -429,7 +429,7 @@
        }
        // 设置了最小值时需检测下当前点击是否小于最小值
        if (this.data.minDate != '') {
-         let minDateObj = new Date(this.data.minDate.replace('-', '/'));
+         let minDateObj = new Date(this.data.minDate.replace(/-/g, '/'));
          if (day.date.getTime() < minDateObj.getTime()) {
            console.log('当前点击日期小于可选最小值');
            return;
@@ -437,7 +437,7 @@
        }
        // 设置了最大值时需检测下当前点击是否大于最大值
        if (this.data.maxDate != '') {
-         let maxDateObj = new Date(this.data.maxDate.replace('-', '/'));
+         let maxDateObj = new Date(this.data.maxDate.replace(/-/g, '/'));
          if (day.date.getTime() > maxDateObj.getTime()) {
            console.log('当前点击日期大于可选最大值');
            return;
