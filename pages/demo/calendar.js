@@ -11,24 +11,25 @@ Page({
       id: '2019-04-18',
       style: 'background: #F56C6C;color: #FFF000;'
     }],
-    dotDays: ['2020-04-20'],
-    daysDesc: [{}],
-    minDate:'2020-03-03',
-    maxDate:'',
+    dotDays: ['2021-08-20'],
+    daysDesc: [{ id: '2021-08-20', desc: "" }],
+    minDate: '2020-03-03',
+    maxDate: '2021-08-26',
+    disableDays:['2021-08-22'],
     selectedDate: '2020-04-22',
     beginDate: '2020-04-01',
     endDate: '2020-04-12',
     showMoreMonths: true,
     showMoreDays: true
   },
-  onReady: function(options) {
+  onReady: function (options) {
     console.log('页面-onReady')
     this.calendar = this.selectComponent("#calendar");
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     console.log('页面-onLoad')
   },
-  onShow: function(options) {
+  onShow: function (options) {
     console.log('页面-onShow')
     // this.setData({
     //   selectedDate: '2020-01-12',
@@ -42,29 +43,29 @@ Page({
     //   }]
     // })
   },
-  onDayClick: function(event) {
+  onDayClick: function (event) {
     console.log(event.detail)
     wx.showToast({
       title: '日期被点击，具体信息请看Console信息',
       icon: 'none'
     })
   },
-  onRangeComplete: function(event) {
+  onRangeComplete: function (event) {
     console.log(event.detail)
 
   },
-  onMonthChange: function(event) {
+  onMonthChange: function (event) {
     console.log(event.detail)
     wx.showToast({
       title: '月份变换，具体信息请看Console信息',
       icon: 'none'
     })
   },
-  addDot: function() {
+  addDot: function () {
     this.setData({
       // beginDate: '2020-06-17',
       // endDate: '2020-06-18',
-      minDate:'2020-06-19',
+      minDate: '2020-06-19',
       maxDate: '2020-07-24'
     })
     this.setData({
@@ -74,7 +75,7 @@ Page({
         id: "2020-06-02",
         desc: "好天气",
         style: 'color: #FF0000; '
-      },{
+      }, {
         id: "2020-06-22",
         desc: "订满",
         style: 'color: #aaa; '
@@ -88,11 +89,11 @@ Page({
         id: '2020-06-20',
         style: 'color: #F00;'
       },
-      //  {
-      //   id: '2020-06-21',
-      //   style: 'background: #0A2355;color: #fff; border-radius: 30px;'
-      // }
-    ]
+        //  {
+        //   id: '2020-06-21',
+        //   style: 'background: #0A2355;color: #fff; border-radius: 30px;'
+        // }
+      ]
     })
   }
 })
