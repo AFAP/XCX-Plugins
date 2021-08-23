@@ -147,6 +147,11 @@ Component({
         this.refreshRangeDate();
         this.refreshCalendar();
       }
+    },
+    'disableDays': function () {
+      if (this.data.initFinished) {
+        this.refreshCalendar();
+      }
     }
   },
   created: function () { },
